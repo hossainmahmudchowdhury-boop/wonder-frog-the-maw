@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="imgage/svg+xml" href="/vite.svg" />
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0 
+        "/>
+        <title>The Frog Maw</title>
+        <meta property="og:image"
+        content="">
+        <meta name= "twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="">
+    </head>
+    <body>
+        <div id="game-container">
+         <canvas id="game-canvas"></canvas>
+        <div id ='hud'>
+            <div id="health-bar">
+                <div id="health-fill"></div>
+            </div>
+            <div id="score">Score-display > Score:<span id="score-value">0</span></div>
+            <div id="controls-hint">Wasd/Arrows: Move | Click: Fire Tentacle</div>
+        </div>
+        <div id="start-screen">
+            <h1>The Frog Maw</h1>
+            <p>Welcome to The Frog Maw!</p>
+            <button id="start-button">BEGIN THE HUNT</button>
+        </div>
+        <div id="game-over-screen"
+        style="display:none;">
+            <h1>Game Over</h1>
+            <p> Start Game Again to perish yourself!!</p>
+            <p id="final-score">Your final score: 0</p>
+            <button id="restart-button">Play Again</button>
+        </div>
+        </div>
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>
