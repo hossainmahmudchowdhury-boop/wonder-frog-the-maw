@@ -37,4 +37,4 @@ You can play it on :wonder-frog-the-maw.edgeone.app
 
 ### Purpose
 
-The reason **Wonder-Frog: The Maw** was made was to try out some new ideas for making games on the web. The people who made it wanted to learn more about how to make games that are fun and interactive and how to use data to make the game better. They used **Wonder-Frog: The Maw** to learn about game logic and how to make the game look good and run well.
+This game is scratched for having fun . 
