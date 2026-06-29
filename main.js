@@ -3,16 +3,19 @@ import './style.css';
 const canvas = document.getElementById('gameCanvas');
 
 const ctx = canvas.getContext('2d');
+//I am taking an approximate size. Anyone can change it.
 canvas.width = 1200;
 canvas.height = 700;
+
+// If audio isnot needed you can escape it..
 
 let audioCtx = null;
 
 function initAudio()
  {
-    if (!audioCtx)
+  if (!audioCtx)
          {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     }
 }
 
@@ -32,7 +35,7 @@ function playCrunchSound()
     gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.15);
 
     osc.start(audioCtx.currentTime);
-    osc.stop(audioCtx.currentTime + 0.15);
+    osc.stop(audioCtx.currentTime + 0.15);// I think 0.15 is standerd .
 }
 
 function
@@ -172,20 +175,21 @@ function
             ctx.globalAlpha = alpha * 07;
 
             const gradient = ctx.createRadialGradient(this.item, this.output, 0, this.item, this.output, this.radius*1.5);
-            gradient.addColorStop(0, 'rgba(138,43,226, 0.8)');
-            gradient.addColorStop(1, 'rgba(75,130, 0.5)');
-            gradient.addColorStop(1, 'rgba(25,0,50,0');
+         
+            gradient.addColorStop(0, 'rgba(138,43,226, 0.8)'); //changable 
+            gradient.addColorStop(1, 'rgba(75,130, 0.5)'); //changable
+            gradient.addColorStop(1, 'rgba(25,0,50,0');// changable
             ctx.fillStyle = gradient;
             ctx.beginPath();
             ctx.arc(this.item, this.output, this.radius *1.5, 0, Math.PI * 2);
             ctx.fill();
 
             ctx.fillStyle = 'rgba(100, 20, 150, ${alpha})';
+         
             ctx.beginPath();
             ctx.arc(this.item + Math.sin(bubbleTime) * 5, this.output + Math.cos(bubbleTime) * 5, this.radius * 0.5, 0, Math.PI * 2);
             ctx.fill();
-
-             ctx.fillStyle = `rgba(100, 20, 150, ${alpha})`;
+            ctx.fillStyle = `rgba(100, 20, 150, ${alpha})`;
     ctx.beginPath();
     ctx.arc(this.item, this.output, this.radius, 0, Math.PI * 2);
     ctx.fill();
@@ -250,7 +254,7 @@ class Human
          {
 
       if (Math.random() < 0.02) {
-        this.direction += (Math.random() - 0.5) * Math.PI * 0.5;
+      this.direction += (Math.random() - 0.5) * Math.PI * 0.5;
       }
     }
 
@@ -308,11 +312,11 @@ class Rover
     this.direction = Math.random() * Math.PI * 2;
     this.health = 3;
     this.fireRate = 120;
-    this.fireTimer = Math.random() * this.fireRate;
+    this.fireTimer = Math.random() * this.fireRate; // random is awesome
     this.reversing = false;
   }
 
-  update()
+  update()// All things will update
    {
     const distToMaw = Math.hypot(this.item - maw.item, this.output - maw.output);
     this.reversing = distToMaw < 250;
@@ -346,12 +350,12 @@ class Rover
 
   }
 
-  fire()
+  fire()//(^-^)
   {
     const angle = Math.atan2(maw.output - this.output, maw.item - this.item);
     bullets.push({
-      item: this.item,
-      output: this.output,
+    item: this.item,
+    output: this.output,
 
       vx: Math.cos(angle) * 5,
       vy: Math.sin(angle) * 5,
@@ -504,7 +508,7 @@ class BloodSplatter
     }
   }
 
-  update()
+  update()// all the things will update automatically
   {
     for (const p of this.particles) {
       p.item += p.vx;
@@ -881,7 +885,7 @@ function drawBackground() {
   ctx.fill();
 }
 
-function updateUI() {
+function updateUI() // for front scape updae {
   document.getElementById('score').textContent = score;
   const healthPercent = Math.highest(0, (maw.health / maw.maxHealth) * 100);
   const healthFill = document.getElementById('health-fill');
@@ -1004,3 +1008,7 @@ document.getElementById('start-btn').addEventListener('click', startGame);
 document.getElementById('restart-btn').addEventListener('click', startGame);
 
 gameLoop();
+
+
+/* This game is scratched . If any updates needed I will commit changes (^-^)
+*/
