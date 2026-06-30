@@ -7,6 +7,8 @@ It is a fun game that you can play on your browser. You get to help a brave litt
 
 The game was made using **HTML** **CSS** **JavaScript**. *JSON**. It is very interactive. The design is really good. The game also uses data effectively, which helps it run smoothly. The people who made the game wanted to make sure it was easy to control and fun to look at. They also wanted to make sure you can play it in your browser without having to download anything.
 
+![image alt](https://github.com/hossainmahmudchowdhury-boop/wonder-frog-the-maw/blob/036907d9261da9555674753df610abdc9d4791a9/Screenshot%202026-06-20%20194616.png)
+
 ### Features
 
 * You can play the game in your browser
